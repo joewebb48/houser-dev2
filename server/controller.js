@@ -17,11 +17,11 @@ module.exports = {
   addHouse: (req, res) => {
     const dbInstance = req.app.get('db');
     const { name, address, city, st, zip, img, mortgage, rent } = req.body;
-    console.log('dbI:', dbInstance);
+    // console.log('dbI:', dbInstance);
 
     dbInstance
       .add_house([name, address, city, st, zip, img, mortgage, rent])
-      .then(() => res.sendState(200))
+      .then(() => res.sendStatus(200))
       .catch(err => {
         res.status(500).send({ errorMessage: 'cant add house' });
         console.log(err);
