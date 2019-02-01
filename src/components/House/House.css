@@ -1,0 +1,20 @@
+.main_house_container {
+  width: 80%;
+}
+.X_BOX {
+  height: 50px;
+  background-color: #fec2c2;
+}
+.box_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  background-color: #e5f4ec;
+}

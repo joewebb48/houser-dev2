@@ -1,4 +1,5 @@
 import React from 'react';
+import './House.css';
 
 export default function House(props) {
   console.log('props', props.houseInfo);
@@ -22,16 +23,18 @@ export default function House(props) {
           </div>
           <div>
             <h6>State:</h6>
-            <p>{props.houseInfo.state}</p>
+            <p>{props.houseInfo.st}</p>
           </div>
           <div>
             <h6>Zip:</h6>
-            <p>{props.houseInfo.zipcode}</p>
+            <p>{props.houseInfo.zip}</p>
           </div>
         </div>
       </div>
-      <div>
-        <h1>X</h1>
+      <div className='Xrow'>
+        <div className='X_BOX'>
+          <h1>X</h1>
+        </div>
       </div>
     </div>
   );

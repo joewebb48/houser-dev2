@@ -16,6 +16,8 @@ massive(process.env.CONNECTION_STRING)
 app.use(bodyParser.json());
 
 app.get(`/api/houses`, ctrl.getHouses);
+app.post(`/api/house`, ctrl.addHouse);
+// app.delete(`/api/house/:id`, ctrl.deleteHouse);
 const SERVER_PORT = process.env.SERVER_PORT;
 
 app.listen(SERVER_PORT, () => {

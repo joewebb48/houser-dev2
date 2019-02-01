@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import WizOne from '../Wizard/WizOne';
+import './Dashboard.css';
 import axios from 'axios';
 import House from '../House/House';
 
@@ -25,21 +27,28 @@ export default class Dashboard extends Component {
   }
   render() {
     console.log('dashstate:', this.state);
-    let showHouses = this.state.houses.map((val, i) => {
-      return <House key={i} houseInfo={val} />;
+    let showHouses = this.state.houses.map((house, i) => {
+      return <House key={i} houseInfo={house} />;
     });
     return (
-      <div>
-        <p>Dashboard</p>
-        {/* <House /> */}
-        {/* //remove later??? */}
-        {/* {this.state.houses} */}
-        {showHouses}
-        <Link to='/wizard'>
-          <div>
-            <button>Add New Property</button>
+      <div className='mainDashContainer_col'>
+        <div className='topRowDash_row'>
+          <div className='DashLogoText'>
+            <h1>Dashboard</h1>
           </div>
-        </Link>
+          <div className='addPropButton'>
+            <Link to='/wizard/WizOne' component={WizOne}>
+              <h4>add new property</h4>
+            </Link>
+          </div>
+        </div>
+        <div>
+          <hr />
+        </div>
+        <div>
+          <h3>HOME listing:</h3>
+        </div>
+        <div className='homeComp'>{showHouses}</div>
       </div>
     );
   }
