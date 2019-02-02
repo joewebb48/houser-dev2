@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 
 app.get(`/api/houses`, ctrl.getHouses);
 app.post(`/api/house`, ctrl.addHouse);
+app.delete('/api/house/:id', ctrl.deleteHouse);
 // app.delete(`/api/house/:id`, ctrl.deleteHouse);
 const SERVER_PORT = process.env.SERVER_PORT;
 

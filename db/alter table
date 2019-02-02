@@ -1,0 +1,3 @@
+ALTER TABLE Houses ADD img TEXT;
+ALTER TABLE Houses ADD mortgage DECIMAL;
+ALTER TABLE Houses ADD rent DECIMAL;

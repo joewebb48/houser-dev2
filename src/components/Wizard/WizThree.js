@@ -28,8 +28,8 @@ class WizThree extends Component {
   }
 
   render() {
-    console.log('ww3 props load:', this.props);
-    console.log('ww3 state load:', this.state);
+    console.log('ww3 props render:', this.props);
+    console.log('ww3 state render:', this.state);
     return (
       <div>
         <p>wiz 3</p>
@@ -42,13 +42,21 @@ class WizThree extends Component {
           <div>
             <h3>Monthly Amount</h3>
             <div>
-              <input />
+              <input
+                value={this.props.mortgage}
+                placeholder='desired Mortgage'
+                onChange={e => this.props.updateMortgage(e.target.value)}
+              />
             </div>
           </div>
           <div>
             <h3>desired rent</h3>
             <div>
-              <input />
+              <input
+                value={this.props.rent}
+                placeholder='desired rent'
+                onChange={e => this.props.updateRent(e.target.value)}
+              />
             </div>
           </div>
           <div>
@@ -66,6 +74,8 @@ class WizThree extends Component {
 }
 const mapStateToProps = state => {
   console.log('state,mstp: WW3:', state);
+  // this.props breaks my code???
+  // console.log('props,mstp: WW3:', this.props);
   return {
     name: state.name,
     address: state.address,
@@ -80,13 +90,13 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   {
-    updateMortgage,
-    updateRent,
     updateName,
-    updateCity,
     updateAddress,
-    updateIMG,
+    updateCity,
     updateSt,
-    updateZip
+    updateZip,
+    updateIMG,
+    updateMortgage,
+    updateRent
   }
 )(WizThree);

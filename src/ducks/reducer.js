@@ -16,6 +16,7 @@ const UPDATE_ZIP = 'UPDATE_ZIP';
 const UPDATE_IMG = 'UPDATE_IMG';
 const UPDATE_MORTGAGE = 'UPDATE_MORTGAGE';
 const UPDATE_RENT = 'UPDATE_RENT';
+const CANCEL_ADD_NEW = 'CANCEL_ADD_NEW';
 
 function reducer(state = initialState, action) {
   console.log('reducer hit:', action.type);
@@ -43,6 +44,9 @@ function reducer(state = initialState, action) {
 
     case UPDATE_RENT:
       return { ...state, RENT: action.payload };
+
+    case CANCEL_ADD_NEW:
+      return initialState;
 
     default:
       return state;
@@ -80,13 +84,14 @@ export function updateZip(zip) {
     payload: zip
   };
 }
-const updateIMG = img => {
+export function updateIMG(img) {
   return {
     type: UPDATE_IMG,
     payload: img
   };
-};
+}
 export function updateMortgage(mtg) {
+  console.log('mtg param in reducer', mtg);
   return {
     type: UPDATE_MORTGAGE,
     payload: mtg
@@ -98,5 +103,10 @@ export function updateRent(rent) {
     payload: rent
   };
 }
-export { updateIMG };
+
+export function candelAddNew() {
+  return {
+    type: CANCEL_ADD_NEW
+  };
+}
 export default reducer;

@@ -1,0 +1,14 @@
+/* .main_wizard_container{
+    height: 100px;
+    
+} */
+.cancel_button_container {
+  height: 100px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  background-color: #fec2c2;
+}
+.cancel_button_text_wrapper {
+}

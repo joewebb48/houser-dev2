@@ -2,40 +2,35 @@ import React from 'react';
 import './House.css';
 
 export default function House(props) {
-  console.log('props', props.houseInfo);
+  console.log('props in House.js', props.house);
+  // console.log('state in House.js', this.state)
   return (
-    <div className='main_house_container'>
-      {/* fix the divs to do the X in the box */}
-      <h1>home listings</h1>
-      <div className='box_row'>
-        <div className='text_col'>
-          <div>
-            <h6>PropertyName:</h6>
-            <p>{props.houseInfo.name}</p>
-          </div>
-          <div>
-            <h6>Address:</h6>
-            <p>{props.houseInfo.address}</p>
-          </div>
-          <div>
-            <h6>City:</h6>
-            <p>{props.houseInfo.city}</p>
-          </div>
-          <div>
-            <h6>State:</h6>
-            <p>{props.houseInfo.st}</p>
-          </div>
-          <div>
-            <h6>Zip:</h6>
-            <p>{props.houseInfo.zip}</p>
-          </div>
-        </div>
+    <div className='House'>
+      <div
+        className='delete-house-button'
+        onClick={e => props.deleteHouse(props.house.id)}
+      >
+        X
       </div>
-      <div className='Xrow'>
-        <div className='X_BOX'>
-          <h1>X</h1>
-        </div>
+      <div className='house-image'>
+        {/* <img src={props.house.img} alt={props.house.name} /> */}
       </div>
+      <p>
+        Property Name: {props.house.name}
+        <br />
+        Address: {props.house.address}
+        <br />
+        City: {props.house.city}
+        <br />
+        State: {props.house.state}
+        <br />
+        Zip: {props.house.zip}
+      </p>
+      <p>
+        Mongthly Mortgage: ${props.house.mortgage}
+        <br />
+        Desired Rent: ${props.house.rent}
+      </p>
     </div>
   );
 }

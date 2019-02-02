@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
+import './Wiz.css';
 import WizOne from './WizOne';
 import WizThree from './WizThree';
 import WizTwo from './WizTwo';
+import Dashboard from '../Dashboard/Dashboard';
 
 export default class Wizard extends Component {
   handleChange(field, value) {
@@ -17,9 +19,13 @@ export default class Wizard extends Component {
       <div className='main_wizard_container'>
         {/* <p>Wizard</p> */}
         {/* <Link to='/'> */}
-        <div>
-          <button>Cancel</button>
-        </div>
+        <Link to='/' component={Dashboard}>
+          <div className='cancel_button_container'>
+            <div className='cancel_button_text_wrapper'>
+              <h1>Cancel</h1>
+            </div>
+          </div>
+        </Link>
         <div>
           <Switch>
             <Route path='/wizard/WizOne' exact component={WizOne} />

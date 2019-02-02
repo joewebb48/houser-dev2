@@ -6,49 +6,55 @@ import axios from 'axios';
 import House from '../House/House';
 
 export default class Dashboard extends Component {
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    this.state = {
-      houses: []
-    };
-    this.componentDidMount = this.componentDidMount.bind(this);
-  }
+  //   this.state = {
+  //     houses: []
+  //   };
+  //   this.componentDidMount = this.componentDidMount.bind(this);
+  //   // this.deleteHouse = this.deleteHouse.bind(this);
+  // }
 
   componentDidMount() {
-    axios.get(`/api/houses`).then(
-      //i am getting data... cant get it to state.
-      res =>
-        // console.log(11, res),
-        this.setState({
-          houses: res.data
-        })
-    );
+    this.props.getHouses();
   }
+
+  // deleteHouse(id) {
+  //   axios.delete(`/api/house/${id}`).then(() => {
+  //     // this.componentDidMount();
+  //     console.log('well wut is going on?');
+  //   });
+  // }
   render() {
-    console.log('dashstate:', this.state);
-    let showHouses = this.state.houses.map((house, i) => {
-      return <House key={i} houseInfo={house} />;
-    });
+    // console.log('dashstate:', this.state);
+    // console.log('dashprops:', this.props);
+    // let showHouses = this.state.houses.map((house, i) => {
+    //   return <House key={i} houseInfo={house} delete={this.deleteHouse} />;
+    // });
     return (
-      <div className='mainDashContainer_col'>
-        <div className='topRowDash_row'>
-          <div className='DashLogoText'>
-            <h1>Dashboard</h1>
-          </div>
-          <div className='addPropButton'>
-            <Link to='/wizard/WizOne' component={WizOne}>
-              <h4>add new property</h4>
+      <div className='Dashboard'>
+        <div className='dashboard-elements'>
+          <div className='dashboard-header'>
+            <h2>Dashboard</h2>
+            <Link to='/wizard' className='add-new-button'>
+              Add New Property
             </Link>
           </div>
-        </div>
-        <div>
           <hr />
+          <div className='Houses'>
+            <h3>Home Listings</h3>
+            {this.props.houses.map((house, i) => {
+              return (
+                <House
+                  house={house}
+                  key={i}
+                  deleteHouse={this.props.deleteHouse}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div>
-          <h3>HOME listing:</h3>
-        </div>
-        <div className='homeComp'>{showHouses}</div>
       </div>
     );
   }

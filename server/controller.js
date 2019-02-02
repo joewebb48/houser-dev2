@@ -26,7 +26,13 @@ module.exports = {
         res.status(500).send({ errorMessage: 'cant add house' });
         console.log(err);
       });
+  },
+  deleteHouse: (req, res) => {
+    const dbInstance = req.app.get('db');
+    const { id } = req.params;
+
+    dbInstance.delete_house(id).then(dbRes => {
+      res.status(200).send(dbRes);
+    });
   }
-  // ,
-  // deleteHouse: () => {}
 };
