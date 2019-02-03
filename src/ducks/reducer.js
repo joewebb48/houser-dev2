@@ -40,10 +40,10 @@ function reducer(state = initialState, action) {
       return { ...state, img: action.payload };
 
     case UPDATE_MORTGAGE:
-      return { ...state, MORTGAGE: action.payload };
+      return { ...state, mortgage: action.payload };
 
     case UPDATE_RENT:
-      return { ...state, RENT: action.payload };
+      return { ...state, rent: action.payload };
 
     case CANCEL_ADD_NEW:
       return initialState;
@@ -104,7 +104,7 @@ export function updateRent(rent) {
   };
 }
 
-export function candelAddNew() {
+export function cancelAddNew() {
   return {
     type: CANCEL_ADD_NEW
   };

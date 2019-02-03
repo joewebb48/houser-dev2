@@ -2,7 +2,8 @@ import React from 'react';
 import './House.css';
 
 export default function House(props) {
-  console.log('props in House.js', props.house);
+  console.log('props.house in House.js', props.house);
+  console.log('props in House.js', props);
   // console.log('state in House.js', this.state)
   return (
     <div className='House'>

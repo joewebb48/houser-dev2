@@ -37,7 +37,7 @@ export default class Dashboard extends Component {
         <div className='dashboard-elements'>
           <div className='dashboard-header'>
             <h2>Dashboard</h2>
-            <Link to='/wizard' className='add-new-button'>
+            <Link to='/wizard/WizOne' className='add-new-button'>
               Add New Property
             </Link>
           </div>

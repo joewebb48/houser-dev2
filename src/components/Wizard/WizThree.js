@@ -65,7 +65,7 @@ class WizThree extends Component {
             </Link>
           </div>
           <div className='save_house_button'>
-            <button onClick={() => this.handleAddHouse}>Complete</button>
+            <button onClick={() => this.handleAddHouse()}>Complete</button>
           </div>
         </div>
       </div>

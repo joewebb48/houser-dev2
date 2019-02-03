@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { updateIMG } from '../../ducks/reducer';
 import { connect } from 'react-redux';
+import { updateIMG } from '../../ducks/reducer';
 import WizOne from './WizOne';
 import WizThree from './WizThree';
 

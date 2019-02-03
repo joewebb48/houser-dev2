@@ -17,7 +17,7 @@ module.exports = {
   addHouse: (req, res) => {
     const dbInstance = req.app.get('db');
     const { name, address, city, st, zip, img, mortgage, rent } = req.body;
-    // console.log('dbI:', dbInstance);
+    console.log('hit addhouw?');
 
     dbInstance
       .add_house([name, address, city, st, zip, img, mortgage, rent])
