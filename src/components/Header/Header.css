@@ -1,4 +1,23 @@
-.mainHeader {
-  height: 100px;
+.header {
+  height: 75px;
+  width: 100%;
   background-color: #519872;
+  color: #fff;
+  font-weight: 700;
+  font-size: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.header > h1 {
+  left: 445px;
+}
+.header > img {
+  left: 400px;
+}
+
+.header > h1,
+.header > img {
+  position: absolute;
+  top: 23px;
 }

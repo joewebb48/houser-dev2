@@ -1,20 +1,42 @@
-.main_house_container {
-  width: 80%;
+.House {
+  width: 100%;
+  height: 150px;
+  background-color: #dedede;
+  margin: 20px 0;
+  position: relative;
 }
-.X_BOX {
-  height: 50px;
-  background-color: #fec2c2;
-}
-.box_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.text_col {
+.house_detail_box {
+  float: left;
+  height: 100%;
+  width: 33%;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  background-color: #e5f4ec;
+  margin: 0 0 10px;
+  justify-content: baseline;
+  align-items: baseline;
+}
+.house_detail_box > * {
+  margin: 0 0 10px;
+}
+.home_img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  margin: 0;
+}
+
+.house_delete_button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }

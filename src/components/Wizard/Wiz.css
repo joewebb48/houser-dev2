@@ -1,14 +1,97 @@
-/* .main_wizard_container{
-    height: 100px;
-    
-} */
-.cancel_button_container {
-  height: 100px;
-  width: 50%;
+.Wiz {
+  width: 50vw;
+  background-color: #e5f4ec;
+  position: relative;
+}
+.wiz_heading {
+  font-size: 30px;
+  margin: 20px;
+  font-weight: 700;
+}
+.wiz_subheader {
   display: flex;
-  justify-content: center;
-  border: 2px solid black;
+  justify-content: space-between;
+}
+.wiz_subheader_button {
+  margin: 20px;
+  border: none;
+  padding: 7px;
+  font-size: 15px;
+  font-weight: 700;
   background-color: #fec2c2;
 }
-.cancel_button_text_wrapper {
+.wiz_input_container {
+  margin: 20px auto;
+  width: 70%;
+}
+
+.wiz_box {
+  margin: 10px;
+  float: left;
+  font-size: 18px;
+  font-weight: 700;
+}
+.wiz_box p {
+  margin-left: 12px;
+}
+.wiz_box * {
+  margin: 2px;
+}
+.wiz_box input {
+  border: 1px solid #519872;
+  border-radius: 2px;
+  height: 25px;
+}
+/* p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+} */
+
+/*  */
+/* //buttons */
+/*  */
+
+/* button {
+  -webkit-appearance: button;
+} */
+.wiz_prev_button {
+  left: 30px;
+}
+.wiz_prev_button,
+.wiz_step_button {
+  background-color: #3b5249;
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+}
+.wiz_step_button {
+  right: 30px;
+}
+
+.wiz_button {
+  margin: 20px;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+div {
+  display: block;
+}
+.wiz_complete_button {
+  background-color: #8aea92;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+element.style {
+  width: 35vw;
+}
+.ww3i {
+  width: 35vw;
 }

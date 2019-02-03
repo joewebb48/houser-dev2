@@ -21,10 +21,7 @@ class WizThree extends Component {
     let { name, address, city, st, zip, img, mortgage, rent } = this.props;
     axios
       .post(`/api/house`, { name, address, city, st, zip, img, mortgage, rent })
-      .then(() => {
-        console.log('anything.. POST');
-        console.log('bruh');
-      });
+      .then(<Redirect to='/' />);
   }
 
   render() {
@@ -32,41 +29,48 @@ class WizThree extends Component {
     console.log('ww3 state render:', this.state);
     return (
       <div>
-        <p>wiz 3</p>
-        <div className='back_forth_button'>
-          {/* <div>
-            <Link>
-            <button>back</button>
-            </Link>
-        </div> */}
-          <div>
-            <h3>Monthly Amount</h3>
-            <div>
-              <input
-                value={this.props.mortgage}
-                placeholder='desired Mortgage'
-                onChange={e => this.props.updateMortgage(e.target.value)}
-              />
-            </div>
+        <div className='wiz_input_container'>
+          <div
+            style={{ textAlign: 'center', fontWeight: '700', margin: '20px' }}
+          >
+            Recomended Rent: $(return)
           </div>
-          <div>
-            <h3>desired rent</h3>
-            <div>
-              <input
-                value={this.props.rent}
-                placeholder='desired rent'
-                onChange={e => this.props.updateRent(e.target.value)}
-              />
-            </div>
+          <div className='wiz_box'>
+            <p>Monthly Mortgage Amount</p>
+            <input
+              className='ww3i'
+              value={this.props.mortgage}
+              // style={{ width: '35vw;' }}
+              placeholder='0'
+              onChange={e => this.props.updateMortgage(e.target.value)}
+            />
           </div>
-          <div>
-            <Link to='/wizard/WizTwo' component={WizTwo}>
-              <button>Back</button>
-            </Link>
+          <div className='wiz_box'>
+            <p>Desired Monthly Rent</p>
+            <input
+              placeholder='0'
+              value={this.props.rent}
+              className='ww3i'
+              onChange={e => this.props.updateRent(e.target.value)}
+            />
           </div>
-          <div className='save_house_button'>
-            <button onClick={() => this.handleAddHouse()}>Complete</button>
-          </div>
+        </div>
+        <div className='wiz_button wiz_prev_button'>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to='/wizard/WizTwo'
+            component={WizTwo}
+          >
+            <h3 style={{ color: 'white', fontWeight: '800' }}>Previous Step</h3>
+          </Link>
+        </div>
+        <div className='wiz_button wiz_complete_button'>
+          <h3
+            style={{ color: 'black', fontWeight: '500' }}
+            onClick={() => this.handleAddHouse()}
+          >
+            Complete
+          </h3>
         </div>
       </div>
     );

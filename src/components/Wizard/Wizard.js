@@ -26,16 +26,28 @@ class Wizard extends Component {
   render() {
     // console.log('wizard state:', this.state);
     return (
-      <div className='main_wizard_container'>
+      <div className='Wiz'>
         {/* <p>Wizard</p> */}
         {/* <Link to='/'> */}
-        <Link to='/' component={Dashboard}>
-          <div className='cancel_button_container'>
-            <div onClick={this.cancel} className='cancel_button_text_wrapper'>
-              <h1>Cancel</h1>
-            </div>
+        <div className='wiz_subheader'>
+          <h2 className='wiz_heading'> Add New Listing</h2>
+          <div onClick={this.cancel} className='wiz_subheader_button'>
+            <Link
+              style={{ textDecoration: 'none' }}
+              to='/'
+              component={Dashboard}
+            >
+              <h3
+                style={{
+                  color: 'black',
+                  fontWeight: '650'
+                }}
+              >
+                Cancel
+              </h3>
+            </Link>
           </div>
-        </Link>
+        </div>
         <div>
           <Switch>
             <Route path='/wizard/WizOne' exact component={WizOne} />

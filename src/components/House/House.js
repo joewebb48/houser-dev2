@@ -7,31 +7,38 @@ export default function House(props) {
   // console.log('state in House.js', this.state)
   return (
     <div className='House'>
-      <div
-        className='delete-house-button'
+      <div className='house_detail_box'>
+        <div className='house_img'>
+          {/* <img src={props.house.img} alt={props.house.name} /> */}
+        </div>
+      </div>
+      <div className='house_detail_box'>
+        <p>
+          Property Name: {props.house.name}
+          {/* <br /> */}
+        </p>
+        <p>Address: {props.house.address}</p>
+        {/* <br /> */}
+        <p>
+          City: {props.house.city}
+          {/* <br /> */}
+        </p>
+        <p>
+          State: {props.house.state}
+          {/* <br /> */}
+        </p>
+        <p>Zip: {props.house.zip}</p>
+      </div>
+      <div className='house_detail_box'>
+        <p>Mongthly Mortgage: {props.house.mortgage}</p>
+        {/* <br /> */}
+        <p>Desired Rent: {props.house.rent}</p>
+      </div>
+      <img
+        className='house_delete_button'
         onClick={e => props.deleteHouse(props.house.id)}
-      >
-        X
-      </div>
-      <div className='house-image'>
-        {/* <img src={props.house.img} alt={props.house.name} /> */}
-      </div>
-      <p>
-        Property Name: {props.house.name}
-        <br />
-        Address: {props.house.address}
-        <br />
-        City: {props.house.city}
-        <br />
-        State: {props.house.state}
-        <br />
-        Zip: {props.house.zip}
-      </p>
-      <p>
-        Mongthly Mortgage: ${props.house.mortgage}
-        <br />
-        Desired Rent: ${props.house.rent}
-      </p>
+        src={require('./xdelete.png')}
+      />
     </div>
   );
 }

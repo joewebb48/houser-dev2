@@ -53,54 +53,56 @@ const WizOne = props => {
   // console.log('words??', props.match, name, address, city);
   return (
     <div>
-      <div className='wizard_inputs'>
-        <div className='wizard_name'>
+      <div className='wiz_input_container'>
+        <div className='wiz_box'>
+          <p>Property Name</p>
           <input
             value={props.name}
             onChange={e => props.updateName(e.target.value)}
-            placeholder='name'
+            // placeholder='name'
           />
         </div>
-        <div className='wizard_address'>
+        <div className='wiz_box'>
+          <p>Address</p>
           <input
             value={props.address}
-            placeholder='address'
+            // placeholder='address'
             onChange={e => props.updateAddress(e.target.value)}
           />
         </div>
-        <div className='wizard_city'>
+        <div className='wiz_box'>
+          <p>City</p>
           <input
             value={props.city}
-            placeholder='city'
+            // placeholder='city'
             onChange={e => props.updateCity(e.target.value)}
           />
         </div>
-        <div className='wizard_state'>
+        <div className='wiz_box'>
+          <p>State</p>
           <input
             value={props.st}
-            placeholder='state'
+            // placeholder='state'
             onChange={e => props.updateSt(e.target.value)}
           />
         </div>
-        <div className='wizard_zipcode'>
+        <div className='wiz_box'>
+          <p>Zip</p>
           <input
             value={props.zip}
-            placeholder='zipcode'
+            // placeholder='zipcode'
             onChange={e => props.updateZip(e.target.value)}
           />
         </div>
       </div>
-      <div className='back_forth_button'>
-        {/* <div>
-            <Link>
-              <button>back</button>
-            </Link>
-          </div> */}
-        <div>
-          <Link to='/wizard/WizTwo' component={WizTwo}>
-            <button>next</button>
-          </Link>
-        </div>
+      <div className='wiz_button wiz_step_button'>
+        <Link
+          style={{ textDecoration: 'none' }}
+          to='/wizard/WizTwo'
+          component={WizTwo}
+        >
+          <h3 style={{ color: 'white', fontWeight: '800' }}>Next Step</h3>
+        </Link>
       </div>
     </div>
   );

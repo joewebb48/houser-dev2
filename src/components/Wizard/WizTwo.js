@@ -9,25 +9,33 @@ const WizTwo = props => {
   console.log('WW2: Props:', props);
   return (
     <div>
-      <div>
-        <h3>IMAGE URL</h3>
-      </div>
-      <div>
-        <input
-          // value={props.img}
-          placeholder='url...'
-          onChange={e => props.updateIMG(e.target.value)}
-        />
+      <div className='wiz_input_container'>
+        <div className='wiz_box'>
+          <p>Image URL</p>
+          <input
+            placeholder='URL...'
+            style={{ width: '35vw' }}
+            onChange={e => props.updateIMG(e.target.value)}
+          />
+        </div>
       </div>
       <div className='back_forth_button'>
-        <div>
-          <Link to='/wizard/WizOne' component={WizOne}>
-            <h4>Back</h4>
+        <div className='wiz_button wiz_prev_button'>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to='/wizard/WizOne'
+            component={WizOne}
+          >
+            <h3 style={{ color: 'white', fontWeight: '800' }}>Previous Step</h3>
           </Link>
         </div>
-        <div>
-          <Link to='/wizard/WizThree' component={WizThree}>
-            <h4>Next</h4>
+        <div className='wiz_button wiz_step_button'>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to='/wizard/WizThree'
+            component={WizThree}
+          >
+            <h3 style={{ color: 'white', fontWeight: '800' }}>Next Step</h3>
           </Link>
         </div>
       </div>
